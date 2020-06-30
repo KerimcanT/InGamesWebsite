@@ -76,7 +76,7 @@ class jsFileDownloader {
     };
 
     this.request.ontimeout = () => {
-      reject(new Error('Downloader error: request timeout'));
+      Console.log("Time out");
     };
 
     this.request.onerror = (e) => {
