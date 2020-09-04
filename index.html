@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InGames</title> 
-    <script>
-        if(localStorage.getItem("username") == null){
-            alert("We could not find any accounts associated with your device please create an account / Cihazınıza tanımlanmış bir hesap bulunamadı lütfen bir hesap oluşturun");
-            window.location = "/apply.html";
+    <script> 
+        if(window.innerWidth < 700){
+            alert("Your device is not competible with this website / Cihazınız bu websitesi ile uyumlu değil");
+            window.location = "https://ingames.ml/about.html";
+        }
+        else if(window.innerHeight < 500){
+            alert("Your device is not competible with this website / Cihazınız bu websitesi ile uyumlu değil");
+            window.location = "https://ingames.ml/about.html";
         }
         
-        if(window.innerWidth < 700){
-            window.location = "https://ingames.ml/about.html";
+        else{
+            if(localStorage.getItem("username") == null){
+                alert("We could not find any accounts associated with your device please create an account / Cihazınıza tanımlanmış bir hesap bulunamadı lütfen bir hesap oluşturun");
+                window.location = "/apply.html";
+            }
         }
-        if(window.innerHeight < 500){
-            window.location = "https://ingames.ml/about.html";
-        }
+        
     </script>
     
     <script data-ad-client="ca-pub-2587595291612772" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
