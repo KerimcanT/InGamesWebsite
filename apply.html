@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body style="background-color: rgb(213, 214, 170);;">
+    <div style="margin:auto; margin-top: 20%; background-color: rgb(226, 219, 190);">
+        <center style="margin:auto; width: 40%; background-color: gray; border: 3px solid #73AD21; padding: 10px;">
+            Email <input type="text" id="email">
+            <br>
+            Username <input type="text" id="username">
+            <br>
+            Password <input type="password" id="password">
+            <br>
+            <button onclick="register()">Submit Form</button>
+            <p>Creating an InGames account is free no fees may apply</p>
+            <script>
+                function register(){
+                    localStorage.setItem("email", document.getElementById("email"));
+                    localStorage.setItem("username", document.getElementById("username"));
+                    localStorage.setItem("password", document.getElementById("password"));
+
+                    alert("Account created");
+                    window.location = "/index.html"
+                }
+            </script>
+        </center>
+    </div>
+</body>
+</html>
