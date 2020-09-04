@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InGames</title> 
     <script>
+        if(localStorage.getItem("username") == null){
+            alert("We could not find any accounts associated with your device please create an account / Cihazınıza tanımlanmış bir hesap bulunamadı lütfen bir hesap oluşturun");
+            window.location = "/apply.html";
+        }
+        
         if(window.innerWidth < 700){
             window.location = "https://ingames.ml/about.html";
         }
         if(window.innerHeight < 500){
             window.location = "https://ingames.ml/about.html";
-        }
-        
-        if(localStorage.getItem("username") == null){
-            alert("We could not find any accounts associated with your device please create an account / Cihazınıza tanımlanmış bir hesap bulunamadı lütfen bir hesap oluşturun");
-            window.location = "/apply.html";
         }
     </script>
     
