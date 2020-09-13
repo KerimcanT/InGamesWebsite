@@ -1,0 +1,10 @@
+<?php
+$to      = 'omrozh@gmail.com';
+$subject = 'the subject';
+$message = 'hello';
+$headers = 'From: omrozh@ingames.ml' . "\r\n",
+    'Reply-To: omrozh@ingames.ml' . "\r\n"
+    'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers);
+?> 
