@@ -44,6 +44,7 @@
     firebase.initializeApp(firebaseConfig)
 
     function store(){
+        alert(document.getElementById("terms").value);
         if(!document.getElementById("terms").value){
             alert("You should accept the terms of use first!");
             return;
