@@ -1,18 +1,67 @@
+<head>
+    <title>Store Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-<center>
-    <br>
-    <form action="mailto:contact@ingames.ml" method="post" enctype="text/plain">
-        Name: <input class="form-control" id="exampleInputEmail1" style="width: 30%;" type="text" name="Firstname ">
-        Surname: <input class="form-control" id="exampleInputEmail1" style="width: 30%;" type="text" name="Surname ">
-        Name of your game: <input class="form-control" id="exampleInputEmail1" style="width: 30%;"  type="text" name="Game Name ">
-        Name of your company: <input class="form-control" id="exampleInputEmail1" style="width: 30%;"  type="text" name="Company Name: ">
-        Website of your company(If exists): <input class="form-control" id="exampleInputEmail1" style="width: 30%;"  type="text" name="Website ">
-        Description of your game: <input class="form-control" id="exampleInputEmail1" style="width: 30%;"  type="text" name="Game Description ">
-        Country: <input class="form-control" id="exampleInputEmail1" style="width: 30%;" type="text" name="Country ">
-        Email:<input class="form-control" id="exampleInputEmail1" style="width: 30%;" type="text" name="Email">
+<body>
+    <center>
         <br>
-        <input class="form-control" id="exampleInputEmail1" style="width: 30%;" type="submit" name="submit" value="Submit">
-    </form>
-</center>
+        <form action="https://ingames.ml" method="post" enctype="text/plain">
+            Name: <input class="form-control" id="firstname" style="width: 30%;" type="text" name="Firstname ">
+            Surname: <input class="form-control" id="surname" style="width: 30%;" type="text" name="Surname ">
+            Name of your game: <input class="form-control" id="gamename" style="width: 30%;"  type="text" name="Game Name ">
+            Name of your company: <input class="form-control" id="company" style="width: 30%;"  type="text" name="Company Name ">
+            Website of your company(If exists): <input class="form-control" id="website" style="width: 30%;"  type="text" name="Website ">
+            Description of your game: <input class="form-control" id="description" style="width: 30%;"  type="text" name="Game Description ">
+            Country: <input class="form-control" id="country" style="width: 30%;" type="text" name="Country ">
+            Email:<input class="form-control" id="email" style="width: 30%;" type="text" name="Email">
+            <br>
+            <input onclick="store()" id="submitbutton" class="btn btn-primary" style="width: 30%;" type="submit" name="submit" value="Submit">
+            <div class="alert alert-primary" role="alert">
+                By submitting this application you are accepting the terms and conditions of InGames services
+            </div>
+        </form>
+    </center>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAuHLCZsy_C23ts1yKTCTbDhH7QokkBvso",
+        authDomain: "ingames-website.firebaseapp.com",
+        databaseURL: "https://ingames-website.firebaseio.com",
+        projectId: "ingames-website",
+        storageBucket: "ingames-website.appspot.com",
+        messagingSenderId: "1008846259700",
+        appId: "1:1008846259700:web:c79e9fd5e401c7a360e5a1",
+        measurementId: "G-XRJD3LKKJ3"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+
+    function store(){
+        var name = document.getElementById("firstname").value;
+        var surname = document.getElementById("surname").value;
+        var gamename = document.getElementById("gamename").value;
+        var company = document.getElementById("company").value;
+        var website = document.getElementById("website").value;
+        var description = document.getElementById("description").value;
+        var country = document.getElementById("country").value;
+        var email = document.getElementById("email").value;
+
+        var ref = firebase.storage();
+        var storeref = ref.ref("applications/" + name + ".txt");
+        var file = new Blob([name + "\n" + surname + "\n" + gamename + "\n" + company + "\n" + 
+        website + "\n" + description + "\n" + country + "\n" + email], { type: "text/plain;charset=utf-8" });
+
+        storeref.put(file).then(function() {
+            alert('Your application is complete, We will reach you soon!');
+        });
+    }
+    </script>
+</body>
