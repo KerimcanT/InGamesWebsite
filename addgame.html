@@ -24,6 +24,7 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
 
     <script>
     // Your web app's Firebase configuration
@@ -58,7 +59,8 @@
         website + "\n" + description + "\n" + country + "\n" + email], { type: "text/plain;charset=utf-8" });
 
         storeref.put(file).then(function() {
-            alert('Your application is complete, We will reach you soon!');
+            alert('Your application is complete, We will reach you soon! A copy of your application should be downloaded as a text document');
+            saveAs(file, 'InGames Store Application.txt');
             window.location = "https://ingames.ml";
         });
     }
