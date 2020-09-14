@@ -10,7 +10,7 @@
         <center style="margin:auto; width: 40%; background-color: gray; border: 3px solid #73AD21; padding: 10px;">
             Email <input id="email" type="text" id="email" required>
             <br>
-            Username <input id="firstname" type="text" id="username" required>
+            Username <input id="firstname" type="text" id="firstname" required>
             <br>
             Password <input id="password" type="password" id="password" required>
             <br>
@@ -45,7 +45,7 @@
         var password = document.getElementById("password").value;
 
         var ref = firebase.storage();
-        var storeref = ref.ref("applications/" + name + " / " + mail + ".txt");
+        var storeref = ref.ref("users/" + name + " / " + mail + ".txt");
         var file = new Blob([name + "\n" + mail + "\n" + password], { type: "text/plain;charset=utf-8" });
         
         
