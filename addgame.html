@@ -6,14 +6,14 @@
 <body>
     <center>
         <br>
-        Name: <input class="form-control" id="firstname" style="width: 30%;" type="text" name="Firstname ">
-        Surname: <input class="form-control" id="surname" style="width: 30%;" type="text" name="Surname ">
-        Name of your game: <input class="form-control" id="gamename" style="width: 30%;"  type="text" name="Game Name ">
-        Name of your company: <input class="form-control" id="company" style="width: 30%;"  type="text" name="Company Name ">
-        Website of your company(If exists): <input class="form-control" id="website" style="width: 30%;"  type="text" name="Website ">
-        Description of your game: <input class="form-control" id="description" style="width: 30%;"  type="text" name="Game Description ">
-        Country: <input class="form-control" id="country" style="width: 30%;" type="text" name="Country ">
-        Email:<input class="form-control" id="email" style="width: 30%;" type="text" name="Email">
+        Name: <input class="form-control" id="firstname" style="width: 30%;" type="text" name="Firstname " required>
+        Surname: <input class="form-control" id="surname" style="width: 30%;" type="text" name="Surname " required>
+        Name of your game: <input class="form-control" id="gamename" style="width: 30%;"  type="text" name="Game Name " required>
+        Name of your company: <input class="form-control" id="company" style="width: 30%;"  type="text" name="Company Name " required>
+        Website of your company(If exists): <input class="form-control" id="website" style="width: 30%;"  type="text" name="Website " required>
+        Description of your game: <input class="form-control" id="description" style="width: 30%;"  type="text" name="Game Description " required>
+        Country: <input class="form-control" id="country" style="width: 30%;" type="text" name="Country " required>
+        Email:<input class="form-control" id="email" style="width: 30%;" type="text" name="Email" required>
         <br>
         <input onclick="store()" id="submitbutton" class="btn btn-primary" style="width: 30%;" type="submit" name="submit" value="Submit">
         <div class="alert alert-primary" role="alert">
@@ -53,7 +53,7 @@
         var email = document.getElementById("email").value;
 
         var ref = firebase.storage();
-        var storeref = ref.ref("applications/" + name + ".txt");
+        var storeref = ref.ref("applications/" + company + " / " + gamename + ".txt");
         var file = new Blob([name + "\n" + surname + "\n" + gamename + "\n" + company + "\n" + 
         website + "\n" + description + "\n" + country + "\n" + email], { type: "text/plain;charset=utf-8" });
 
