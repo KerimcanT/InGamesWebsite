@@ -40,18 +40,21 @@
     firebase.initializeApp(firebaseConfig)
 
     function register(){
+        var today = new Date();
+        var fulldate = String(today.getDate()) + "." + String(today.getMonth()) + "." String(today.getFullYear());
         var name = document.getElementById("firstname").value;
         var mail = document.getElementById("email").value;
         var password = document.getElementById("password").value;
 
         var ref = firebase.storage();
         var storeref = ref.ref("users/" + name + " / " + mail + ".txt");
-        var file = new Blob([name + "\n" + mail + "\n" + password], { type: "text/plain;charset=utf-8" });
+        var file = new Blob([name + "\n" + mail + "\n" + password + "\n" + fulldate], { type: "text/plain;charset=utf-8" });
         
         
         localStorage.setItem("email", document.getElementById("email"));
         localStorage.setItem("username", document.getElementById("username"));
         localStorage.setItem("password", document.getElementById("password"));
+        localStorage.setItem("date", fulldate);
 
         storeref.put(file).then(function() {
             alert('Your account is created');
