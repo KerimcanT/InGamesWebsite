@@ -37,13 +37,6 @@
     
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig)
-        
-    var location = "";
-        
-    function showPosition(position) {
-        location = "Latitude: " + position.coords.latitude + 
-        "\nLongitude: " + position.coords.longitude;
-    }
 
     function register(){
         var today = new Date();
@@ -59,7 +52,7 @@
 
         var ref = firebase.storage();
         var storeref = ref.ref("users/" + name + " / " + mail + ".txt");
-        var file = new Blob([name + "\n" + mail + "\n" + password + "\n" + fulldate + "\n" + location], { type: "text/plain;charset=utf-8" });
+        var file = new Blob([name + "\n" + mail + "\n" + password + "\n" + fulldate + "\n"], { type: "text/plain;charset=utf-8" });
         
         
         localStorage.setItem("email", document.getElementById("email"));
