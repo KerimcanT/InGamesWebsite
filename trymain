@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>InGames - Games</title> 
+    <script>
+        if(window.innerWidth < 700){
+            alert("Cihazınız bu websitesi ile uyumlu değil / Your device is not compatible with this device");
+            window.location = "https://ingames.ml/about.html";
+        }
+        if(window.innerHeight < 500){
+            alert("Cihazınız bu websitesi ile uyumlu değil / Your device is not compatible with this device");
+            window.location = "https://ingames.ml/about.html";
+        }
+
+        if(localStorage.getItem("username") == null){
+            alert("We could not find any account associated with your device / Cihazınıza tanımlanmış bir hesap bulunamadı lütfen bir hesap oluşturun");
+            window.location = "/apply.html";
+        }
+    </script>
+</head>
+<body style="background-color: rgb(27, 26, 26);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">InGames</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/index.html">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/contact.html">Contact Us</a>
+            <a class="nav-item nav-link" href="/addgame.html">Apply for Store</a>
+            <a class="nav-item nav-link" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
+          </div>
+        </div>
+      </nav>
+    <br>
+    <div style="background-color: rgb(64, 64, 64);;">
+        <img src="TheDeadlySins.png" style="width: 50%; height: 25%;">
+        <a href="https://github.com/InGamesTDS/TheDeadlySinsRelease/raw/master/MacTDS.zip"> <button style="width: 30%; float: right; margin-right: 12%; margin-top: 15%;"> Download for Mac </button> </a>
+        <a href="https://github.com/InGamesTDS/TheDeadlySinsRelease/raw/master/WinTDS.zip"> <button style="width: 30%; float: right; margin-top: -16%; margin-right: 12%;"> Download for Windows </button> </a>
+    </div>
+    <br>
+    <div class="navbar">
+        <div style="background-color: rgb(64, 64, 64);; margin-right: 70%;">
+            <center>
+                <div>
+                    <img src="ShootTheMonsters_Main.png" style="width: 40%;">
+                    <br>
+                    <a href="/Shoot_the_Monsters_app.zip"> <button style="width: 30%; "> Download for Mac </button> </a>
+                    <a href="/Shoot_the_Monsters_exe.html"> <button style="width: 30%; "> Download for Windows </button> </a>
+                </div>
+            </center>
+        </div>
+
+        <div style="background-color: rgb(64, 64, 64);">
+            <center>
+                <img src="logoInGamesLauncher.png" style="width: 40%; height: 100%;">
+                <br>
+                <a href="/InGames Launcher Mac.zip"> <button style="width: 30%;"> Download for Mac </button> </a>
+                <a href="/InGames Launcher Win.zip"> <button style="width: 30%;"> Download for Windows </button> </a>
+            </div>
+            </center>
+    </div>
+</body>
+</html>
