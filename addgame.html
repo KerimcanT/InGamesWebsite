@@ -1,9 +1,24 @@
 <head>
     <title>Store Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
-<body>
+<body style="background-color: rgb(27, 26, 26); color:rgb(200, 200, 200); font-family: Arial, Helvetica, sans-serif;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">InGames</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/index.html">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/contact.html">Contact Us</a>
+            <a class="nav-item nav-link active" href="/addgame.html">Apply for Store</a>
+            <a class="nav-item nav-link" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
+          </div>
+        </div>
+      </nav>
     <center>
         <br>
         Name: <input class="form-control" id="firstname" style="width: 30%;" type="text" name="Firstname " required>
@@ -16,7 +31,7 @@
         Email:<input class="form-control" id="email" style="width: 30%;" type="text" name="Email" required>
         <br>
         <input onclick="store()" id="submitbutton" class="btn btn-primary" style="width: 30%;" type="submit" name="submit" value="Submit">
-        <div class="alert alert-primary" role="alert">
+        <div>
            <input type="checkbox" id="terms"> I accept the <a href="/terms.txt"> terms of use </a> of InGames services
         </div>
     </center>
