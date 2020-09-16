@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body style="background-color: rgb(213, 214, 170);;">
-    <div style="margin:auto; margin-top: 20%; background-color: rgb(226, 219, 190);">
-        <center style="margin:auto; width: 40%; background-color: gray; border: 3px solid #73AD21; padding: 10px;">
-            Email <input id="email" type="text" id="email" required>
-            <br>
-            Username <input id="firstname" type="text" id="firstname" required>
-            <br>
-            Password <input id="password" type="password" id="password" required>
+<body style="background-color: rgb(27, 26, 26);">
+    <div style="margin:auto; margin-top: 20%; background-color: rgb(64, 64, 64);">
+        <center style="margin:auto; width: 60%; background-color: gray; padding: 10px;">
+            Email <input class="form-control" style="width: 20%" id="email" type="text" id="email" required>
+            Username <input class="form-control" style="width: 20%" id="firstname" type="text" id="firstname" required>
+            Password <input class="form-control" style="width: 20%" id="password" type="password" id="password" required>
             <br>
             <button onclick="register()">Submit Form</button>
             <p>Creating an InGames account is free no fees will be applied</p>
@@ -45,6 +44,11 @@
         var name = document.getElementById("firstname").value;
         var mail = document.getElementById("email").value;
         var password = document.getElementById("password").value;
+
+        if(name.length < 4 || mail.length < 4 || surname.length < 4){
+          alert("Missing entries!");
+          return;
+        }
 
         var ref = firebase.storage();
         var storeref = ref.ref("users/" + name + " / " + mail + ".txt");
