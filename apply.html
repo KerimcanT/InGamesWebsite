@@ -39,8 +39,9 @@
     firebase.initializeApp(firebaseConfig)
         
     function showPosition(position) {
-        return "Latitude: " + position.coords.latitude + 
+        var location = "Latitude: " + position.coords.latitude + 
         "\nLongitude: " + position.coords.longitude; 
+        return location;
     }
 
     function register(){
