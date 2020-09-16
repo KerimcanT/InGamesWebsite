@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>InGames - Games</title> 
+    <script>
+        if(window.innerWidth < 700){
+            alert("Cihazınız bu websitesi ile uyumlu değil / Your device is not compatible with this device");
+            window.location = "https://ingames.ml/about.html";
+        }
+        if(window.innerHeight < 500){
+            alert("Cihazınız bu websitesi ile uyumlu değil / Your device is not compatible with this device");
+            window.location = "https://ingames.ml/about.html";
+        }
+
+        if(localStorage.getItem("username") == null){
+            alert("We could not find any account associated with your device / Cihazınıza tanımlanmış bir hesap bulunamadı lütfen bir hesap oluşturun");
+            window.location = "/apply.html";
+        }
+    </script>
+</head>
+<body style="background-color: rgb(27, 26, 26);">
+    <style>
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">InGames</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/index.html">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/contact.html">Contact Us</a>
+                <a class="nav-item nav-link" href="/addgame.html">Apply for Store</a>
+                <a class="nav-item nav-link" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
+                <a class="nav-item nav-link" href="https://ingames.ml/InGames%20Launcher%20Mac.zip" tabindex="-1" aria-disabled="true">Get InGames Launcher For Mac</a>
+                &nbsp;
+                <a class="nav-item nav-link" href="https://ingames.ml/InGames%20Launcher%20Mac.zip" tabindex="-1" aria-disabled="true">Get InGames Launcher For Win</a>
+
+                <form class="form-inline" style="float: right;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div style="width: 20%; height: 100%; color: rgb(122, 122, 122); float: right;">
+        <br>
+        <p>&nbsp; Categories</p>
+        <hr style="background-color: white;">
+        <br>
+        <p>&nbsp; Action</p>
+        <br>
+        <p>&nbsp; Adventure</p>
+        <br>
+        <p>&nbsp; Puzzle</p>
+        <br>
+        <p>&nbsp; Racing</p>
+        <br>
+        <p>&nbsp; Shooter</p>
+        <br>
+        <p>&nbsp; RPG</p>
+        <br>
+        <p>&nbsp; Strategy</p>
+        <br>
+        <p>&nbsp; Survival</p>
+        <br>
+        <p>&nbsp; FPS</p>
+        <br>
+        <p>&nbsp; Horror</p>
+    </div>
+    <div style="float: left; height:350px ; width: 20%; color: white; background-color: rgb(64, 64, 64); margin-left: 5%; margin-top: 5%;">
+        <center style="margin-top: 100%;">
+            Game name
+            <br>
+            <small>Dev Name</small>
+        </center>
+    </div>
+    <div style="float: left; height:350px ; width: 20%; color: white; background-color: rgb(64, 64, 64); margin-left: 5%; margin-top: 5%;">
+        <center style="margin-top: 100%;">
+            Game name
+            <br>
+            <small>Dev Name</small>
+        </center>
+    </div>
+    <div style="float: left; height:350px ; width: 20%; color: white; background-color: rgb(64, 64, 64); margin-left: 5%; margin-top: 5%;">
+        <center style="margin-top: 100%;">
+            Game name
+            <br>
+            <small>Dev Name</small>
+        </center>
+    </div>
+    <div style="float: left; height:350px ; width: 20%; color: white; background-color: rgb(64, 64, 64); margin-left: 5%; margin-top: 5%;">
+        <center style="margin-top: 100%;">
+            Game name
+            <br>
+            <small>Dev Name</small>
+        </center>
+    </div>
+    <div style="float: left; height:350px ; width: 20%; color: white; background-color: rgb(64, 64, 64); margin-left: 5%; margin-top: 5%;">
+        <center style="margin-top: 100%;">
+            Game name
+            <br>
+            <small>Dev Name</small>
+        </center>
+    </div>
+    <div style="float: left; height:350px ; width: 20%; color: white; background-color: rgb(64, 64, 64); margin-left: 5%; margin-top: 5%;">
+        <center style="margin-top: 100%;">
+            Game name
+            <br>
+            <small>Dev Name</small>
+        </center>
+    </div>
+</body>
+</html>
