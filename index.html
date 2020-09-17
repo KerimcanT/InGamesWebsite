@@ -39,7 +39,7 @@
                 <a class="nav-item nav-link" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
                 </div>
         </div>
-    <button class="btn btn-primary" style="height: 10%" href="/logout.html" tabindex="-1" aria-disabled="true" onclick="logout()">Logout
+    <button id="logout" class="btn btn-primary" style="height: 10%;" href="/logout.html" tabindex="-1" aria-disabled="true" onclick="logout()">Logout
             </button></nav>
 
        <div style="width: 20%; height: 100%; color:  #444548; float: right;">
@@ -142,6 +142,11 @@
         </center>
     </div>
     <script>
+        if(localStorage.getItem("username") == null){
+            document.getElementById("logout").hidden = true;
+        }else{
+            document.getElementById("logout").hidden = false;
+        }
         function launchermac(){
             if(localStorage.getItem("username") == null){
                 alert("You cannot download this item without an active subscription")
@@ -160,6 +165,7 @@
             window.location = "https://ingames.ml/InGames%20Launcher%20Win.zip";
         }
         function logout(){
+            alert("Logged out!");
             localStorage.clear();
             window.location.reload();
         }
