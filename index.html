@@ -53,10 +53,10 @@
         <p style="color: rgb(120, 120, 120); margin-top: 30%;">&nbsp; Launcher </p>
         <hr style="background-color: white;">
         <br>
-        <a href="https://ingames.ml/InGames%20Launcher%20Mac.zip" style="color: #444548;">Download for Mac</a>
+        <a onclick="launchermac()" style="color: #444548;">Download for Mac</a>
         <br>
         <br>
-        <a href="https://ingames.ml/InGames%20Launcher%20Win.zip" style="color: #444548;">Download for Windows</a>
+        <a onclick="launcherwin()" style="color: #444548;">Download for Windows</a>
         <br>
         <br>
         <br>
@@ -127,6 +127,23 @@
         </center>
     </div>
     <script>
+        function launchermac(){
+            if(localStorage.getItem("username") == null){
+                alert("You cannot download this item without an active subscription")
+                return;
+            }
+            
+            window.location = "https://ingames.ml/InGames%20Launcher%20Mac.zip"
+        }
+        
+        function launcherwin(){
+            if(localStorage.getItem("username") == null){
+                alert("You cannot download this item without an active subscription")
+                return;
+            }
+            
+            window.location = "https://ingames.ml/InGames%20Launcher%20Win.zip"
+        }
         function logout(){
             localStorage.clear();
             window.location.reload();
