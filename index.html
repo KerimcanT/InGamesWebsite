@@ -53,10 +53,10 @@
         <p style="color: rgb(120, 120, 120); margin-top: 30%;">&nbsp; Launcher </p>
         <hr style="background-color: white;">
         <br>
-        <a onclick="launchermac()" style="color: #444548;">Download for Mac</a>
+        <button class="btn btn-link" onclick="launchermac()" style="color: #444548;">Download for Mac</a>
         <br>
         <br>
-        <a onclick="launcherwin()" style="color: #444548;">Download for Windows</a>
+        <button class="btn btn-link" onclick="launcherwin()" style="color: #444548;">Download for Windows</a>
         <br>
         <br>
         <br>
@@ -133,7 +133,7 @@
                 return;
             }
             
-            window.location = "https://ingames.ml/InGames%20Launcher%20Mac.zip"
+            window.location = "https://ingames.ml/InGames%20Launcher%20Mac.zip";
         }
         
         function launcherwin(){
@@ -142,7 +142,7 @@
                 return;
             }
             
-            window.location = "https://ingames.ml/InGames%20Launcher%20Win.zip"
+            window.location = "https://ingames.ml/InGames%20Launcher%20Win.zip";
         }
         function logout(){
             localStorage.clear();
