@@ -12,7 +12,7 @@
 
 <script>
     function login(){
-        var username = document.getElementById("username").value;
+        var username = document.getElementById("email").value;
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
 
@@ -36,7 +36,7 @@
         }
         }
 
-        request.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/users%2F" + username + "%20%2F%20" + email + ".txt?alt=media&token=781143a6-5e1f-4cc8-b46c-dc4ad8c611f2", true);
+        request.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/users%2F" + email + "%20%2F%20" + email + ".txt?alt=media&token=781143a6-5e1f-4cc8-b46c-dc4ad8c611f2", true);
     
 
         request.send();
