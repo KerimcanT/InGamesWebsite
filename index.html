@@ -37,7 +37,7 @@
                 <a class="nav-item nav-link" href="/contact.html">Contact Us</a>
                 <a class="nav-item nav-link" href="/addgame.html">Apply for Store</a>
                 <a class="nav-item nav-link" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
-                <a class="nav-item nav-link" href="/apply.html" tabindex="-1" aria-disabled="true">Sign Up</a>
+                <a class="nav-item nav-link" href="/apply.html" tabindex="-1" aria-disabled="true" id="signup">Sign Up</a>
                 </div>
         </div>
     <button id="logout" class="btn btn-primary" style="height: 10%;" href="/logout.html" tabindex="-1" aria-disabled="true" onclick="logout()">Logout
@@ -145,8 +145,10 @@
     <script>
         if(localStorage.getItem("username") == null){
             document.getElementById("logout").hidden = true;
+            document.getElementById("signup").hidden = false;
         }else{
             document.getElementById("logout").hidden = false;
+            document.getElementById("signup").hidden = true;
         }
         function launchermac(){
             if(localStorage.getItem("username") == null){
