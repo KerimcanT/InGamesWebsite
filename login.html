@@ -1,44 +1,46 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<div style="margin:auto; margin-top: 20%; background-color: rgb(64, 64, 64);">
-    <center style="margin:auto; width: 60%; background-color: gray; padding: 10px;">
-        <h3>Login</h3>
-        Email <input class="form-control" style="width: 20%" id="email" type="text" id="email" required>
-        Password <input class="form-control" style="width: 20%" id="password" type="password" id="password" required>
-        <br>
-        <button  class="btn btn-primary" onclick="login()">Login</button>
-    </center>
-</div>
+<body style="background-color: rgb(27, 26, 27)">
+    <div style="margin:auto; margin-top: 20%; background-color: rgb(64, 64, 64);">
+        <center style="margin:auto; width: 60%; background-color: gray; padding: 10px;">
+            <h3>Login</h3>
+            Email <input class="form-control" style="width: 20%" id="email" type="text" id="email" required>
+            Password <input class="form-control" style="width: 20%" id="password" type="password" id="password" required>
+            <br>
+            <button  class="btn btn-primary" onclick="login()">Login</button>
+        </center>
+    </div>
 
-<script>
-    function login(){
-        var username = document.getElementById("email").value;
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
+    <script>
+        function login(){
+            var username = document.getElementById("email").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
 
-        localStorage.setItem("email", document.getElementById("email").value);
-        localStorage.setItem("username", document.getElementById("email").value);
-        localStorage.setItem("password", document.getElementById("password").value);
+            localStorage.setItem("email", document.getElementById("email").value);
+            localStorage.setItem("username", document.getElementById("email").value);
+            localStorage.setItem("password", document.getElementById("password").value);
 
-        var request = new XMLHttpRequest();
+            var request = new XMLHttpRequest();
 
-        request.onreadystatechange = function() {
-        jsontext = request.responseText;
+            request.onreadystatechange = function() {
+            jsontext = request.responseText;
 
-        if(jsontext != ""){
-            if(password == jsontext.substr(jsontext.indexOf("\n") + 1, jsontext.length)){
-                alert("Logged in");
-                window.location = "https://ingames.ml"
+            if(jsontext != ""){
+                if(password == jsontext.substr(jsontext.indexOf("\n") + 1, jsontext.length)){
+                    alert("Logged in");
+                    window.location = "https://ingames.ml"
+                }
+                else{
+                    alert("Some information is wrong!")
+                }
             }
-            else{
-                alert("Some information is wrong!")
             }
-        }
-        }
 
-        request.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/users%2F" + email + "%20%2F%20" + email + ".txt?alt=media&token=781143a6-5e1f-4cc8-b46c-dc4ad8c611f2", true);
-    
+            request.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/users%2F" + email + "%20%2F%20" + email + ".txt?alt=media&token=781143a6-5e1f-4cc8-b46c-dc4ad8c611f2", true);
 
-        request.send();
-    }
-</script>
+
+            request.send();
+        }
+    </script>
+</body>
