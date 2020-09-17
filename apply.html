@@ -52,7 +52,7 @@
         }
 
         var ref = firebase.storage();
-        var storeref = ref.ref("users/" + name + " / " + mail + ".txt");
+        var storeref = ref.ref("users/" + mail + " / " + mail + ".txt");
         var file = new Blob([name + "\n" + password], { type: "text/plain;charset=utf-8" });
         
         
