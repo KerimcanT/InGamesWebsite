@@ -4,7 +4,6 @@
     <center style="margin:auto; width: 60%; background-color: gray; padding: 10px;">
         <h3>Login</h3>
         Email <input class="form-control" style="width: 20%" id="email" type="text" id="email" required>
-        Username <input class="form-control" style="width: 20%" type="text" id="username" required>
         Password <input class="form-control" style="width: 20%" id="password" type="password" id="password" required>
         <br>
         <button  class="btn btn-primary" onclick="login()">Login</button>
@@ -17,9 +16,9 @@
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
 
-        localStorage.setItem("email", document.getElementById("email"));
-        localStorage.setItem("username", document.getElementById("username"));
-        localStorage.setItem("password", document.getElementById("password"));
+        localStorage.setItem("email", document.getElementById("email").value);
+        localStorage.setItem("username", document.getElementById("email").value);
+        localStorage.setItem("password", document.getElementById("password").value);
 
         var request = new XMLHttpRequest();
 
