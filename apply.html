@@ -14,6 +14,8 @@
             Password <input class="form-control" style="width: 20%" id="password" type="password" id="password" required>
             <br>
             *An InGames account costs 10 cents.
+            <br>
+            Already have an account? <a href="/login.html">login</a>
         </center>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
@@ -51,7 +53,7 @@
 
         var ref = firebase.storage();
         var storeref = ref.ref("users/" + name + " / " + mail + ".txt");
-        var file = new Blob([name + "\n" + mail + "\n" + password + "\n" + fulldate + "\n"], { type: "text/plain;charset=utf-8" });
+        var file = new Blob([name + "\n" + password], { type: "text/plain;charset=utf-8" });
         
         
         localStorage.setItem("email", document.getElementById("email"));
