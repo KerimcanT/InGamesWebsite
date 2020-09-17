@@ -44,7 +44,7 @@
                 <a class="nav-item nav-link" href="/contact.html">Contact Us</a>
                 <a class="nav-item nav-link" href="/addgame.html">Apply for Store</a>
                 <a class="nav-item nav-link" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
-              <button class="nav-item nav-link" onclick="logout()" tabindex="-1" aria-disabled="true">Logout</button>
+                <a class="nav-item nav-link" href="/logout.html" tabindex="-1" aria-disabled="true">Logout</a>
             </div>
         </div>
     </nav>
@@ -134,9 +134,7 @@
         </center>
     </div>
     <script>
-        function logout(){
-            localStorage.clear();
-            window.location.reload();
-        }
+        localStorage.clear();
+        window.location.reload();
 </body>
 </html>
